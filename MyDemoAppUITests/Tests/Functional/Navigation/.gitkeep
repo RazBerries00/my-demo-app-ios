@@ -1,0 +1,3 @@
+# This file ensures the Navigation folder is tracked by git
+# The existing NavigationTest.swift file is in the Tests/ folder
+# You can move it here when reorganizing

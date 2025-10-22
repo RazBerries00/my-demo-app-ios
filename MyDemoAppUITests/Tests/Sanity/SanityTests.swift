@@ -8,7 +8,20 @@
 
 import XCTest
 
-class SanityTests: MyDemoAppTestBase {
+class SanityTests: XCTestCase {
+    let app = XCUIApplication()
+
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = true
+        app.launch()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        app.terminate()
+    }
+
 
     // TODO: Add your sanity tests here
     // These should be quick tests that verify:

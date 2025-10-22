@@ -1,6 +1,19 @@
 import XCTest
 
-class ProductListingPageTest: MyDemoAppTestBase {
+class ProductListingPageTest: XCTestCase {
+    let app = XCUIApplication()
+
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = true
+        app.launch()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        app.terminate()
+    }
+
     func testProductListingPageAddItemToCart() {
         PageObject().selectItemByNumber(itemNumber: 1).tap()
         PageObject().addToCartButton.tap()

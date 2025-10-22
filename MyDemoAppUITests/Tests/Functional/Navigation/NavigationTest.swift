@@ -1,6 +1,19 @@
 import XCTest
 
-class NavigationTest: MyDemoAppTestBase {
+class NavigationTest: XCTestCase {
+    let app = XCUIApplication()
+
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = true
+        app.launch()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        app.terminate()
+    }
+
     func testNavigateToCart() throws {
         XCTAssert(PageObject().cartButton.waitForExistence(timeout: 2))
         PageObject().cartButton.tap()

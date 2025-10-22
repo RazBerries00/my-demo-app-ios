@@ -7,7 +7,20 @@
 
 import XCTest
 
-class EndToEndTests: MyDemoAppTestBase {
+class EndToEndTests: XCTestCase {
+    let app = XCUIApplication()
+
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = true
+        app.launch()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        app.terminate()
+    }
+
 
     // TODO: Add your end-to-end tests here
     // These should test complete user journeys from start to finish

@@ -1,3 +1,0 @@
-# This file ensures the Product folder is tracked by git
-# The existing ProductDetailsTest.swift and ProductListingPageTest.swift files are in the Tests/ folder
-# You can move them here when reorganizing

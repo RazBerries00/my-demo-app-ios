@@ -1,6 +1,20 @@
 import XCTest
 
-class RotationTest: MyDemoAppTestBase {
+class RotationTest: XCTestCase {
+    let app = XCUIApplication()
+
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = true
+        app.launch()
+        XCUIDevice.shared.orientation = .portrait
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        app.terminate()
+    }
+
     func testScreenRotation() {
         // You can only control the orientation of the device, not the app
         // So use the `XCUIDevice.shared` which represents the physical device

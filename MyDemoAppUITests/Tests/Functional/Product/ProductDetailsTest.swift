@@ -1,6 +1,19 @@
 import XCTest
 
-class ProductDetailsTest: MyDemoAppTestBase {
+class ProductDetailsTest: XCTestCase {
+    let app = XCUIApplication()
+
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = true
+        app.launch()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        app.terminate()
+    }
+
     let productSelector = "Product Name"
     let backPack = "Sauce Labs Backpack - Black"
 

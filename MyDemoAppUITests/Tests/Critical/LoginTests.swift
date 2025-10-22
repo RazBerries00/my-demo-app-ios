@@ -7,7 +7,20 @@
 
 import XCTest
 
-class LoginTests: MyDemoAppTestBase {
+class LoginTests: XCTestCase {
+    let app = XCUIApplication()
+
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = true
+        app.launch()
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        app.terminate()
+    }
+
 
     // TODO: Add your login tests here
     // Examples:
